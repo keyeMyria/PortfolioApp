@@ -1,0 +1,26 @@
+1. specific lows and highs (i.e not just 52 week)
+2. volume changes -> indicate interest in stock
+3. volatility
+4. trade on surge and dip i.e. show previous day gain, i.e. yesterday +%4 -> likely down a few a few 100 bps today
+5. stats over n days
+  a. percentage change
+  b. volatility
+  c. news? -> newsapi
+    number of articles
+    sentiment of articles
+6. analyze ahours trading on surge stocks (i.e I've noticed stocks that have good days grab a little more in after hours, not sure why though)
+7. Likelihood to move higher or lower: i.e. out of past n days when up > 0.3%, how many times did the stock go higher than 0.3%
+8. day of week: last time gains were on friday, monday losses
+9. notifications, when and is at n, notify
+10. import all portfolio data, robinhood, meryll, etc.
+11. down/up days in range: i.e. i noticed roku was down the past two days, but that took my own memory: down 4 days in past 9 trading days could be an opportunity to enter
+12. news by date range
+13. See multiple charts on a stock i.e. i factor in day percentage, week percentage etc. to make a decision
+14. Sort through larger percentage +-'s with date and releveant news articles to analyze what happened.
+15. Tax information: need all trades, 30 days, long term, short term, profits and loss, etc
+16. review transfer history, thought i would be at 8.7k
+17. specific earnings date
+18. could be cool, on each price change on the chart show the news and info that happened that day and at what time
+19. all upcoming earnings: pip install yahoo_earnings_calendar
+20. frontend: show all charts i want in one screen, not just 1 day, 1 week, 1 year like rhood
+21. Start of market, seeing bad premarket numbers on a stock, how many times in the last n days has the stock had shitty premarket or even a bad morning but finished on top by the end of the day? What is the average percentage gain in this case.

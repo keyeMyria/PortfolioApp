@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+#    command: ["scripts/wait-for-it.sh", "db:5432", "--", "python", "./api/manage.py", "runserver", "0.0.0.0:8000"]
+    command: python api/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+#      - migration
+      - db
+    environment:
+      - DEBUG
+      - SECRET_KEY
+      - DB_NAME
+      - DB_USER
+      - DB_HOST
+      - DB_PORT
+      - EMAIL_HOST_PASSWORD
+#  migration:
+#    build: .
+#    command: ["scripts/wait-for-it.sh", "db:5432", "--", "python", "./api/manage.py", "migrate"]
+#    volumes:
+#      - .:/code
+#    links:
+#      - db
+#    depends_on:
+#      - db
+#    environment:
+#      - DEBUG
+#      - SECRET_KEY
+#      - DB_NAME
+#      - DB_USER
+#      - DB_HOST
+#      - DB_PORT
+#      - EMAIL_HOST_PASSWORD
