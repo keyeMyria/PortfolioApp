@@ -14,8 +14,9 @@ $ docker-compose up
 ```
 ### Encountering errors when doing above
 If you see this message when trying to start the backend:
-  ```Is the server running locally and accepting connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
-  ```
+```
+Is the server running locally and accepting connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+```
 , then create a symlink: ln -s /tmp/.s.PGSQL.5432 /var/run/postgresql/.s.PGSQL.5432
 This is usually caused by multiple docker containers running at the same time.
 
