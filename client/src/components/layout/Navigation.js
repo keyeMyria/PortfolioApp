@@ -99,11 +99,6 @@ class Navigation extends Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <LinkContainer to="/twitch-stream">
-                                    <NavLink>Watch</NavLink>
-                                </LinkContainer>
-                            </NavItem>
-                            <NavItem>
                                 <LinkContainer to="/trades">
                                     <NavLink>Trade History</NavLink>
                                 </LinkContainer>

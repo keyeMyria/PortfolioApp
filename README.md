@@ -12,6 +12,12 @@
 $ docker-compose build
 $ docker-compose up
 ```
+### Encountering errors when doing above
+If you see this message when trying to start the backend:
+  ```Is the server running locally and accepting connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+  ```
+, then create a symlink: ln -s /tmp/.s.PGSQL.5432 /var/run/postgresql/.s.PGSQL.5432
+This is usually caused by multiple docker containers running at the same time.
 
 ## Install & Start Frontend Dev Server
 
@@ -26,20 +32,11 @@ $ yarn start
 $ cd client && yarn deploy
 ```
 
-## New App:
-* find-replace template -> app_name
-* find-replace tem -> app_name_shortened (not the same as app_name)
-* mv api/tem api/app_name_shortened
-* cd ../; mv tem app_name
-* docker-compose run web bash
-  * python manage.py migrate
-  * python manage.py createsuperuser
-* mv client/src/fonts/tem-fonts client/src/fonts/app_name_shortened-fonts
-* sudo vim /etc/hosts
-  * edit 127.0.0.1  localhost local.template.com -> 127.0.0.1 localhost local.app_name.com
-
+## Notes
+Make sure /etc/hosts is correct
+-> 127.0.0.1  localhost local.portfolio.com
 
 
 ## Useful Commands:
 docker-compose run web bash
-
+django admin user : root, password : portfolioroot

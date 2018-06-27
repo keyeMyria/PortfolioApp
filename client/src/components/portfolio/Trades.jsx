@@ -11,31 +11,24 @@ import { Loading } from '../utils'
 
 class Trades extends Component {
     render() {
-        const { data: { loading, trades } } = this.props
+        const { data: { loading, allTrades } } = this.props
 
         return (
             <Container>
-                <h1 className='text-center'>My Portfolios</h1>
+                <h1 className='text-center'>My Trades</h1>
                     <Row>
                         <Col sm='12' md={{ size: '6', offset: '3' }} lg={{ size: '8', offset: '2' }}>
                             {loading ? <Loading /> : (
-                                trades.length !== 0 ? (
+                                allTrades.length !== 0 ? (
                                     <Row>
-                                        {trades.map((trade, i) => (
-                                            <Col key={`stock-${trade.name}`} lg={trades.length >= 2 ? 4 : 6}
+                                        {allTrades.map((trade, i) => (
+                                            <Col key={`stock-${trade.name}`} lg={allTrades.length >= 2 ? 4 : 6}
                                                  md={6} xs={12} sm={12}>
-                                                <Card style={{ marginTop: '2rem' }}>
-                                                    <CardBody>
-                                                        <CardTitle>
-                                                            {trade.ticker}
-                                                        </CardTitle>
-                                                        <CardText>
-                                                            <Link to={`/portfolio/${portfolio.name}`}>
-                                                                <FontAwesomeIcon icon={faCog} />&nbsp;Manage
-                                                            </Link>
-                                                        </CardText>
-                                                    </CardBody>
-                                                </Card>
+                                                <div>
+                                                  {trade.stock.ticker},
+                                                  ${trade.price},
+                                                  {trade.quantity} share(s)
+                                                </div>
                                             </Col>
                                             ))}
                                     </Row>

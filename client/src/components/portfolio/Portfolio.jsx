@@ -5,6 +5,9 @@ import { Col, Container, Row } from 'reactstrap'
 
 import { Loading } from '../utils'
 
+import { Trades } from '.'
+
+
 class Portfolio extends Component {
     render() {
         const { data: { loading, portfolio } } = this.props
